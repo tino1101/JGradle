@@ -1,5 +1,6 @@
 package com.tino.jgradle
 
-class CustomExt {
+class DownloadFile {
+    String url;
     String name;
 }
