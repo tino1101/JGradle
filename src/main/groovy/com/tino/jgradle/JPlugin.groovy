@@ -18,6 +18,16 @@ class JPlugin implements Plugin<Project> {
                 createClass(project.createClass.packageName, project.createClass.className, project.createClass.property)
             }
         }
+        project.task('downloadFileFromPlatform') {
+            doLast {
+                download(project.jFileUrl, project.jFileName)
+            }
+        }
+        project.task('createClassFromPlatform') {
+            doLast {
+                createClass(project.packageName, project.className, project.property)
+            }
+        }
     }
 
     void download(String src, String name) throws IOException {
